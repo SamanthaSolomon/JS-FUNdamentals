@@ -47,4 +47,13 @@ console.log(myArr2.filter((value)=>{
   return value.length == 4
 }))
 
-//MAP - return a new arr where you can touch each item and make a change, does not mutate. New arr
+//MAP - return a new arr where you can touch each item and make a change, does not mutate. Create new arr
+console.log(myArr2.map((value, index) => {
+    return value + ' six'
+}))
+
+//forEach - does not create a new array, like doing a for loop, for each do a thing
+console.log(myArr2.forEach((value, index) => {
+    console.log(value)
+    return index
+}))
