@@ -51,27 +51,41 @@
 // const [one, two] = myArr1
 // console.log(one, two)
 
+
 //LOOP OVER ARRAYS
+// const myArr = [1, 2, 3, 4]
+
+// //for loop
+// for (i = 0; i < myArr.length; i++){
+//     console.log(myArr[i])
+// }
+
+// //for of loop
+// for (value of myArr){
+//     console.log(value)
+// }
+//                       //value of index  
+// const loopFunction = (value, index) => {
+//     console.log (value, index)
+// }
+// //using forEach to say do this function for each value - callback function - using function as a value
+// myArr.forEach(loopFunction)
+
+// //use raw function as parameter
+// myArr.forEach((value, index) => {
+//     console.log (value, index)
+// })
+
+//PUSH, POP, SHIFT, UNSHIFT
 
 const myArr = [1, 2, 3, 4]
+//remove one from end
+myArr.pop()
+//add 5 to end
+myArr.push(5)
+//remove one from front
+myArr.shift()
+//add one form front
+myArr.unshift(0)
 
-//for loop
-for (i = 0; i < myArr.length; i++){
-    console.log(myArr[i])
-}
-
-//for of loop
-for (value of myArr){
-    console.log(value)
-}
-                      //value of index  
-const loopFunction = (value, index) => {
-    console.log (value, index)
-}
-//using forEach to say do this function for each value - callback function - using function as a value
-myArr.forEach(loopFunction)
-
-//use raw function as parameter
-myArr.forEach((value, index) => {
-    console.log (value, index)
-})
+console.log(myArr)
