@@ -106,32 +106,51 @@
 
 //INDEX OF, FIND, FINDINDEX, SOME, EVERY
 
-const myArr = [ 1, 2, 3, 4 ]
+// const myArr = [ 1, 2, 3, 4 ]
 
-//tells you the index of a value
-const index = myArr.indexOf(2)
-console.log(index)
+// //tells you the index of a value
+// const index = myArr.indexOf(2)
+// console.log(index)
 
-//search array to find first value that matches param
-const find = myArr.find((value, index) => {
+// //search array to find first value that matches param
+// const find = myArr.find((value, index) => {
+//     return value > 2
+// })
+// console.log(find)
+
+// //search array to find index of first value that matches param
+// const findIndex = myArr.findIndex((value, index) => {
+//     return value > 2
+// })
+// console.log(findIndex)
+
+// //seach array to determin is at least one value matches test, returns t/f
+// const some = myArr.some((value, index) => {
+//     return value > 2
+// })
+// console.log(some)
+
+// //determins if all values in the array pass test, returns boolean
+// const every = myArr.every((value, index) => {
+//     return value > 2
+// })
+// console.log(every)
+
+
+//FILTER & MAP
+//return new arrays
+const myArr = [1, 2, 3, 4]
+
+//return new array with values that match
+const filter = myArr.filter((value) => {
     return value > 2
 })
-console.log(find)
 
-//search array to find index of first value that matches param
-const findIndex = myArr.findIndex((value, index) => {
-    return value > 2
-})
-console.log(findIndex)
+console.log(filter)
 
-//seach array to determin is at least one value matches test, returns t/f
-const some = myArr.some((value, index) => {
-    return value > 2
+//maps over array, makes change, returns new array w/ changes
+const map = myArr.map((value) => {
+    return value * 5 / 2
 })
-console.log(some)
 
-//determins if all values in the array pass test, returns boolean
-const every = myArr.every((value, index) => {
-    return value > 2
-})
-console.log(every)
+console.log(map)
