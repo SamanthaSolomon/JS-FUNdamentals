@@ -23,22 +23,55 @@
 // //invoke function stored at index
 // console.log(myArr[4]())
 
-//combining arrays
-const myArr1 = [1,2]
-const myArr2 = [3,4]
 
-//creates nested arr in 3rd arr
-const myArr3 = [myArr1, myArr2]
-console.log(myArr3)
 
-//turn into sting and concatinate
-const myArr4 = myArr1 + myArr2
-console.log(myArr4)
+//COMBINING
+// const myArr1 = [1,2]
+// const myArr2 = [3,4]
 
-//combine two arr using .concat method
-const myArr5 = myArr1.concat(myArr2)
-console.log(myArr5)
+// //creates nested arr in 3rd arr
+// const myArr3 = [myArr1, myArr2]
+// console.log(myArr3)
 
-//combine using spread operator
-const myArr6 = [...myArr1, ...myArr2]
-console.log(myArr6)
+// //turn into sting and concatinate
+// const myArr4 = myArr1 + myArr2
+// console.log(myArr4)
+
+// //combine two arr using .concat method
+// const myArr5 = myArr1.concat(myArr2)
+// console.log(myArr5)
+
+// //combine using spread operator
+// const myArr6 = [...myArr1, ...myArr2]
+// console.log(myArr6)
+
+
+// //DESTRUCTURING - break in to pieces
+// const myArr1 = [1,2]
+// const [one, two] = myArr1
+// console.log(one, two)
+
+//LOOP OVER ARRAYS
+
+const myArr = [1, 2, 3, 4]
+
+//for loop
+for (i = 0; i < myArr.length; i++){
+    console.log(myArr[i])
+}
+
+//for of loop
+for (value of myArr){
+    console.log(value)
+}
+                      //value of index  
+const loopFunction = (value, index) => {
+    console.log (value, index)
+}
+//using forEach to say do this function for each value - callback function - using function as a value
+myArr.forEach(loopFunction)
+
+//use raw function as parameter
+myArr.forEach((value, index) => {
+    console.log (value, index)
+})
