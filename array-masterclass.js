@@ -89,15 +89,49 @@
 
 // console.log(myArr)
 
+
 //SLICE AND SPLICE
 
-const myArr1 = [1, 2, 3, 4]
+// const myArr1 = [1, 2, 3, 4]
 
-//cut up to but not including the second index
-const myArr2 = myArr1.slice(1, 3)
+// //cut up to but not including the second index
+// const myArr2 = myArr1.slice(1, 3)
 
-console.log(myArr1, myArr2)
+// console.log(myArr1, myArr2)
 
-//1st param is which index you want to start at, 2nd is how many items to take out
-const myArr3 = myArr1.splice(1, 2)
-console.log(myArr1, myArr3)
+// //1st param is which index you want to start at, 2nd is how many items to take out
+// const myArr3 = myArr1.splice(1, 2)
+// console.log(myArr1, myArr3)
+
+
+//INDEX OF, FIND, FINDINDEX, SOME, EVERY
+
+const myArr = [ 1, 2, 3, 4 ]
+
+//tells you the index of a value
+const index = myArr.indexOf(2)
+console.log(index)
+
+//search array to find first value that matches param
+const find = myArr.find((value, index) => {
+    return value > 2
+})
+console.log(find)
+
+//search array to find index of first value that matches param
+const findIndex = myArr.findIndex((value, index) => {
+    return value > 2
+})
+console.log(findIndex)
+
+//seach array to determin is at least one value matches test, returns t/f
+const some = myArr.some((value, index) => {
+    return value > 2
+})
+console.log(some)
+
+//determins if all values in the array pass test, returns boolean
+const every = myArr.every((value, index) => {
+    return value > 2
+})
+console.log(every)
