@@ -42,20 +42,31 @@
 //first argument assigned to first parameter, second assigned to second parameter
 //can name default value in parameters
 //taking in more arguments than defined in params - use rest operator. Only necessary with arrow functions
-const add = (x = 1, y = 1, ...z) =>{
-    console.log(x + y)
-    console.log(z)
-}
-// add(5,6)
-// add()
-add(4, 5, 6, 7, 8, 9)
+// const add = (x = 1, y = 1, ...z) =>{
+//     console.log(x + y)
+//     console.log(z)
+// }
+// // add(5,6)
+// // add()
+// add(4, 5, 6, 7, 8, 9)
 
-//aspect of prototyping is that additional arguments are saved in local variable "arguments" - obj contains all other arguments
-const addAgain = function(x = 1, y = 2){
-    console.log([...arguments])//All arguments are inside. more useful to put into array with spread operator
-    console.log(x+y)
+// //aspect of prototyping is that additional arguments are saved in local variable "arguments" - obj contains all other arguments
+// const addAgain = function(x = 1, y = 2){
+//     console.log([...arguments])//All arguments are inside. more useful to put into array with spread operator
+//     console.log(x+y)
+// }
+
+// addAgain(1, 2, 3, 4, 5, 6)
+
+//GETTING DATA FROM FUNCTIONS - return values
+//console.log logs results onto screen but it doesn't mean that you have the data to manipulate. just console.logging gives you nothing back. The way a function gives data back is by using return statements. Same for all function syntaxes.
+
+const add = (x = 1, y = 2) => {
+    return x + y 
 }
 
-addAgain(1, 2, 3, 4, 5, 6)
+const result = add(1, 2) + add(3,4)
+console.log(result)
+
 
 
