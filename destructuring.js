@@ -28,9 +28,32 @@ const myArr1 = [1, 2, 3]
 // [a, b] = [b, a]
 // console.log(a, b)
 
-const myArr2 = [4,5,6]
-//grabs the two arrays and puts them in another array
-const myArr3 = [myArr1, myArr2]
-//spread operator spreads out the elements in the two arrays into one array
-const myArr4 = [...myArr1, ...myArr2]
-console.log(myArr3, myArr4)
+// const myArr2 = [4,5,6]
+// //grabs the two arrays and puts them in another array
+// const myArr3 = [myArr1, myArr2]
+// //spread operator spreads out the elements in the two arrays into one array
+// const myArr4 = [...myArr1, ...myArr2]
+// console.log(myArr3, myArr4)
+
+//OBJECTS
+
+const myObj1 = {
+    name: 'Sam',
+    age: 35,
+}
+
+const myObj2 = {
+    name: 'Clint',
+    age: 41,
+}
+// old way without destructuring
+// const name = myObj.name
+// const age = myObj.age
+
+//object destructuring, look in myObj for a propery named name etc.
+const {name, age} = myObj1
+//can't reassign variables, add new variable name to acces values in other obj
+const {name:name2, age:age2} = myObj2
+
+console.log(name, age)
+console.log(name2, age2)
