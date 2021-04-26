@@ -30,4 +30,32 @@
 // myFunc()
 
 //METHOD #3 - ARROW FUNCTIONS, THE STANDARD
+//not hoisted, no prototype - cannot be used as a constructor
+//data in parens is being passed into the instructions
+// const myFunc = () => {
+//     console.log('Hello World')
+// }
+
+// myFunc()
+
+//PASSING IN DATA
+//first argument assigned to first parameter, second assigned to second parameter
+//can name default value in parameters
+//taking in more arguments than defined in params - use rest operator. Only necessary with arrow functions
+const add = (x = 1, y = 1, ...z) =>{
+    console.log(x + y)
+    console.log(z)
+}
+// add(5,6)
+// add()
+add(4, 5, 6, 7, 8, 9)
+
+//aspect of prototyping is that additional arguments are saved in local variable "arguments" - obj contains all other arguments
+const addAgain = function(x = 1, y = 2){
+    console.log([...arguments])//All arguments are inside. more useful to put into array with spread operator
+    console.log(x+y)
+}
+
+addAgain(1, 2, 3, 4, 5, 6)
+
 
