@@ -60,19 +60,43 @@ const myArr1 = [1, 2, 3]
 
 //ARRAY OF OBJECTS
 
-const myObjArr = [
-    {
-    name: 'Sam',
-    age: 35,
-}, 
-{
-    name: 'Clint',
-    age: 41,
-} 
-]
+// const myObjArr = [
+//     {
+//     name: 'Sam',
+//     age: 35,
+// }, 
+// {
+//     name: 'Clint',
+//     age: 41,
+// } 
+// ]
 
-//destructure array and objects in array in same line
-const [{name, age}, {name:name2, age:age2}] = myObjArr
+// //destructure array and objects in array in same line
+// const [{name, age}, {name:name2, age:age2}] = myObjArr
 
-console.log(name, age)
-console.log(name2, age2)
+// console.log(name, age)
+// console.log(name2, age2)
+
+//SPREAD OPERATOR WITH OBJECTS
+
+const myObj = {
+        name: 'Sam',
+        age: 35,
+    }
+
+const myHouse = {
+    location: 'Baltimore',
+    rooms: 5,
+}
+//js knows property name and value are same when writtin like this instead of like this myObj:myObj
+//create two obj inside of another obj
+// const samsLife = { myObj, myHouse }
+//spread operator combines obj to be in one obj
+const samsLife = { ...myObj, ...myHouse }
+console.log(samsLife)
+
+//manipulating objects
+//destructure rooms puts it in its own variable. Use rest operator to take the rest and put it in samsLife2 var
+//This is the syntax for destructuring
+const {rooms, ...samsLife2} = samsLife
+console.log(samsLife2)
