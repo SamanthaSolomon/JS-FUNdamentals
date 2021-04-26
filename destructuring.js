@@ -79,24 +79,55 @@ const myArr1 = [1, 2, 3]
 
 //SPREAD OPERATOR WITH OBJECTS
 
-const myObj = {
-        name: 'Sam',
-        age: 35,
-    }
+// const myObj = {
+//         name: 'Sam',
+//         age: 35,
+//     }
 
-const myHouse = {
-    location: 'Baltimore',
-    rooms: 5,
+// const myHouse = {
+//     location: 'Baltimore',
+//     rooms: 5,
+// }
+// //js knows property name and value are same when writtin like this instead of like this myObj:myObj
+// //create two obj inside of another obj
+// // const samsLife = { myObj, myHouse }
+// //spread operator combines obj to be in one obj
+// const samsLife = { ...myObj, ...myHouse }
+// console.log(samsLife)
+
+// //manipulating objects
+// //destructure rooms puts it in its own variable. Use rest operator to take the rest and put it in samsLife2 var
+// //This is the syntax for destructuring
+// const {rooms, ...samsLife2} = samsLife
+// console.log(samsLife2)
+
+
+
+//DESTRUCTURE FUNCTION with array
+
+// //passing in two parameters (values) into an array, use the rest operator to put other values in another variable
+// const myFunc = ([val1, val2, ...theRest]) => {
+//     console.log('in the func-', val1, val2)
+//     console.log(theRest)
+//     //params get assigned
+//     return [ val1, val2 ]
+// }
+// //destructure return value of function and pass in params
+// const [five, cheese] = myFunc([5, 'cheese', 6, 7, 8])
+
+// console.log('out of the func-', five, cheese)
+
+//DESTRUCTURE FUNCTION with obj
+const myFunc = ({name, age, ...theRest}) => {
+    console.log('in the fun-', name, age, theRest)
+    return{name, age}
 }
-//js knows property name and value are same when writtin like this instead of like this myObj:myObj
-//create two obj inside of another obj
-// const samsLife = { myObj, myHouse }
-//spread operator combines obj to be in one obj
-const samsLife = { ...myObj, ...myHouse }
-console.log(samsLife)
 
-//manipulating objects
-//destructure rooms puts it in its own variable. Use rest operator to take the rest and put it in samsLife2 var
-//This is the syntax for destructuring
-const {rooms, ...samsLife2} = samsLife
-console.log(samsLife2)
+const {name, age} = myFunc({
+    name: 'Alex',
+    age: 35,
+    height: "5' 0",
+    glasses: false
+})
+
+console.log(name, age)
