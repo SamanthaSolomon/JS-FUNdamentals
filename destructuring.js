@@ -37,23 +37,42 @@ const myArr1 = [1, 2, 3]
 
 //OBJECTS
 
-const myObj1 = {
+// const myObj1 = {
+//     name: 'Sam',
+//     age: 35,
+// }
+
+// const myObj2 = {
+//     name: 'Clint',
+//     age: 41,
+// }
+// // old way without destructuring
+// // const name = myObj.name
+// // const age = myObj.age
+
+// //object destructuring, look in myObj for a propery named name etc.
+// const {name, age} = myObj1
+// //can't reassign variables, add new variable name to acces values in other obj
+// const {name:name2, age:age2} = myObj2
+
+// console.log(name, age)
+// console.log(name2, age2)
+
+//ARRAY OF OBJECTS
+
+const myObjArr = [
+    {
     name: 'Sam',
     age: 35,
-}
-
-const myObj2 = {
+}, 
+{
     name: 'Clint',
     age: 41,
-}
-// old way without destructuring
-// const name = myObj.name
-// const age = myObj.age
+} 
+]
 
-//object destructuring, look in myObj for a propery named name etc.
-const {name, age} = myObj1
-//can't reassign variables, add new variable name to acces values in other obj
-const {name:name2, age:age2} = myObj2
+//destructure array and objects in array in same line
+const [{name, age}, {name:name2, age:age2}] = myObjArr
 
 console.log(name, age)
 console.log(name2, age2)
