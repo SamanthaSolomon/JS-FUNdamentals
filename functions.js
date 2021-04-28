@@ -85,12 +85,31 @@
 // printName(person)
 
 //array destructuring
-const person = ['Samantha Solomon', 35]
-//first item in array gets passed into first variable, second to second, etc. breaking down the array you pass in. Instead of passing in all different arguments, pass in an object or array that has all the different things that one needs.
-const printName = ([name, age]) => {
-    console.log(name)
-}
+// const person = ['Samantha Solomon', 35]
+// //first item in array gets passed into first variable, second to second, etc. breaking down the array you pass in. Instead of passing in all different arguments, pass in an object or array that has all the different things that one needs.
+// const printName = ([name = "Bob", age = 5]) => {
+//     console.log(name)
+// }
 
-printName(person)
+// printName(person)
 
+//destructure return values
+// taking the return value and destructuring when you invoke so you can access data individually
 
+// const returnSam = () => {
+//     return ["Samantha", 35]
+// }
+//array, first item gets assigned to first value in parameter and so on
+// const [name, age] = returnSam()
+
+// console.log(name, age)
+
+// const returnSam = () => {
+//     return {name: "Samantha", age: 35}
+// }
+// //object - looks for name and age value in return object, useful for getting back more than one thing
+// const {name, age} = returnSam()
+
+// console.log(name, age)
+
+//REFERENCE VERSUS VALUE
