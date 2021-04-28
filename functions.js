@@ -139,3 +139,23 @@
 // console.log(myObj)
 
 //CLOSURE
+//things with the same scope can access each other
+
+const myFunc = () => {
+    let  number = 5
+    //function runs and returns function
+    // return () => number // no curly brakets means implied return
+    return [() => number, value => number = value] //one param does not require parens, none or two or more does
+}
+//return gets assigned to this variable
+// const getNum = myFunc()
+
+//use array destructuring to access the functions in the returned array
+const [getNum, setNum] = myFunc() 
+setNum(6)
+
+//this will return an error because number is scoped, only exists inside the function
+// console.log(number)
+
+//now you can print the value of the function
+console.log(getNum())
