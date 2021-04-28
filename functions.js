@@ -61,12 +61,36 @@
 //GETTING DATA FROM FUNCTIONS - return values
 //console.log logs results onto screen but it doesn't mean that you have the data to manipulate. just console.logging gives you nothing back. The way a function gives data back is by using return statements. Same for all function syntaxes.
 
-const add = (x = 1, y = 2) => {
-    return x + y 
+// const add = (x = 1, y = 2) => {
+//     return x + y 
+// }
+
+// const result = add(1, 2) + add(3,4)
+// console.log(result)
+
+
+//DESTRUCTURING IN FUNCTIONS
+//destructuring the data going in
+
+// //object destructuring, pass in the information that we want from object as params
+// const person = {
+//     name: 'Alex Merced',
+//     age: 35
+// }
+// //pull out the property name and nothing else, more efficient. Looks inside the object, sees that it will need to destructure, finds a value called name and assigns it ot property called name. (name:name)
+// const printName = ({name}) => {
+//     console.log(name)
+// }
+
+// printName(person)
+
+//array destructuring
+const person = ['Samantha Solomon', 35]
+//first item in array gets passed into first variable, second to second, etc. breaking down the array you pass in. Instead of passing in all different arguments, pass in an object or array that has all the different things that one needs.
+const printName = ([name, age]) => {
+    console.log(name)
 }
 
-const result = add(1, 2) + add(3,4)
-console.log(result)
-
+printName(person)
 
 
