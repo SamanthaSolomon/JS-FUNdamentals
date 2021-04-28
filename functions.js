@@ -113,3 +113,29 @@
 // console.log(name, age)
 
 //REFERENCE VERSUS VALUE
+//primitives are pass by value: numbers, strings, boolean
+//collections are passed by referense: objects arrays maps sets
+
+// let num = 5
+
+// const changeNum = (theNum) => {
+//     //num is not changed, a copy is made called theNum
+//     thisNum = 6
+//     console.log(thisNum)
+// }
+// changeNum(num)
+// console.log(num)
+
+// //when passing in an obj or array function is working with a reference in memory, so changes the object outside of the function
+// let myObj = {name: "Samantha", age: 35}
+
+// const changeName = (person) => {
+//     //take the original person obj, break it apart and put inside new obj also called person - in order to not alter the original obj
+//     person = {...person}
+//     person.name = "Leah"
+//     console.log(person)
+// }
+// changeName(myObj)
+// console.log(myObj)
+
+//CLOSURE
