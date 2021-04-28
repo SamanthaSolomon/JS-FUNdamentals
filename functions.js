@@ -141,21 +141,39 @@
 //CLOSURE
 //things with the same scope can access each other
 
-const myFunc = () => {
-    let  number = 5
-    //function runs and returns function
-    // return () => number // no curly brakets means implied return
-    return [() => number, value => number = value] //one param does not require parens, none or two or more does
+// const myFunc = () => {
+//     let  number = 5
+//     //function runs and returns function
+//     // return () => number // no curly brakets means implied return
+//     return [() => number, value => number = value] //one param does not require parens, none or two or more does
+// }
+// //return gets assigned to this variable
+// // const getNum = myFunc()
+
+// //use array destructuring to access the functions in the returned array
+// const [getNum, setNum] = myFunc() 
+// setNum(6)
+
+// //this will return an error because number is scoped, only exists inside the function
+// // console.log(number)
+
+// //now you can print the value of the function
+// console.log(getNum())
+
+//FUNCTION CURRYING
+//break function into multiple steps
+//createChar returns a function wich returns two other functions which returns one other function
+const createChar = (name) => (align) => (spells) => {
+    //return object with all of the values
+    return{
+        name,
+        align,
+        spells
+    }
 }
-//return gets assigned to this variable
-// const getNum = myFunc()
+//functions have access to each other
+const step1 = createChar("Hank")
+const step2 = step1('evil')
+const char = step2(['scratches', 'bites', 'evil looks'])
 
-//use array destructuring to access the functions in the returned array
-const [getNum, setNum] = myFunc() 
-setNum(6)
-
-//this will return an error because number is scoped, only exists inside the function
-// console.log(number)
-
-//now you can print the value of the function
-console.log(getNum())
+console.log(char)
