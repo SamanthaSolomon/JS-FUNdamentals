@@ -37,37 +37,43 @@
 //     //stringify 
 //     return convertedDates
 // }
-// const API = "https://jsonmock.hackerrank.com/api/movies?Year="
-// let req = new XMLHttpRequest()
-
 //expected output for first date "10 20 2052"
 
 
-async function getMovieList(year) {
-    req.open ('GET', "https://jsonmock.hackerrank.com/api/movies?Year=" + year)
+// AJAX REQUEST AND RENDER
+// url in varibale for cleaner code
+const API = "https://jsonmock.hackerrank.com/api/movies?Year="
 
+// creating a new XMLHttpRequest object and naming it req
+let req = new XMLHttpRequest()
+
+//async function executing the get movie action. Chose async because of performance reasons, browser recieves a callbck when data is recieved so the browser can keep working on any other code there. Prevents freezing should there be a delay in fetching data from API
+async function getMovieList(year) {
+    //req.open initializes a new request, passing in the GET method and the appropriate url
+    req.open ('GET', API + year)
+    //re.onload is a property of the GlobalEventHandlers mixin, processes load events, fires when resources have loaded
     req.onload = () => {
+        //if the status is between 200 and 400, meaning a successful call
         if (req.status >= 200 && req.status < 400){
+            //convert the text recieved from the server into json and put it into a variable called data
             const data = JSON.parse(req.responseText)
-            console.log('data-', data)
-            render(data)
+            let renderHTML = data.data.map(title => {
+                return `<h1>${title.Title}<h1>`
+            }).join('')
+            // console.log(renderHTML)
+            // console.log('data-', data.data)
+            document.querySelector('#title-list').innerHTML = renderHTML
         } else {
             console.log("error")
         }
     }
+    //sends the request
     req.send()
-
-    let render = (movies) => {
-        let array = ""
-        for (i = 0; i < movies.length; i++){
-            console.log(movies[i].title)
-        }
-    }
-
 
 }
 
-console.log(getMovieList(2012));
+getMovieList(2012);
+
 
 
 
