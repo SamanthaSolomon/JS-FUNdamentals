@@ -1,3 +1,5 @@
+// EASY ALGO
+
 // function makeInputVerifier(minimum, maximum){
 //     function verify(inputValue){
 //         //if inputValue <  min
@@ -20,6 +22,10 @@
 // }
 // console.log(makeInputVerifier(10, 20))
 
+
+
+//HARD ALGO
+
 // let dates = ["20th Oct 2052", "6th Jun 1933", "26th May 1960", "20th Sep 1958", "16th Mar 2068", "25th May 1912", "16th Dec 2018", "6th Jun 1933", "26th Dec 2061", "4th Nov 2030", "28th Jul 1963"]
 
 // const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dev"]
@@ -40,6 +46,11 @@
 //expected output for first date "10 20 2052"
 
 
+
+
+
+
+
 // AJAX REQUEST AND RENDER
 // url in varibale for cleaner code
 const API = "https://jsonmock.hackerrank.com/api/movies?Year="
@@ -57,11 +68,13 @@ async function getMovieList(year) {
         if (req.status >= 200 && req.status < 400){
             //convert the text recieved from the server into json and put it into a variable called data
             const data = JSON.parse(req.responseText)
-            let renderHTML = data.data.map(title => {
+            //maping over what is recieved in the data variable (which is also called data) passing in a param called title, returning the Title as the param, joining on space to create string
+            let renderHTML = data.data.map((title) => {
                 return `<h1>${title.Title}<h1>`
             }).join('')
             // console.log(renderHTML)
             // console.log('data-', data.data)
+            //rendering the renderHTML variable to the title list div
             document.querySelector('#title-list').innerHTML = renderHTML
         } else {
             console.log("error")
