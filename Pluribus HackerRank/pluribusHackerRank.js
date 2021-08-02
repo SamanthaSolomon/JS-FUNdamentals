@@ -37,9 +37,10 @@
 //     //stringify 
 //     return convertedDates
 // }
+// const API = "https://jsonmock.hackerrank.com/api/movies?Year="
+// let req = new XMLHttpRequest()
 
-const API = "https://jsonmock.hackerrank.com/api/movies?Year="
-let req = new XMLHttpRequest()
+//expected output for first date "10 20 2052"
 
 
 async function getMovieList(year) {
@@ -67,6 +68,7 @@ async function getMovieList(year) {
 }
 
 console.log(getMovieList(2012));
+
 
 
 
