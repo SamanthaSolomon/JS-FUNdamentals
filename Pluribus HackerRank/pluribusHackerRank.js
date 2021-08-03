@@ -22,6 +22,35 @@
 // }
 // console.log(makeInputVerifier(10, 20))
 
+//ALTERNATE EASY ALGO 
+
+// function makeInputVerifier(min, max, input){
+//     //function verify (input){
+//         switch (input)
+//         {
+//             case input < min :
+//                 return "input is less than minimum value"
+            
+//             case input >= min && input <= max :
+//                 return "input is in range"
+
+//             case input > max :
+//                 return "input is more than maximum value"
+
+//             default:
+//                 return "value cannot be verified"
+//             break
+//         }
+//     //}
+//     // verify(7)
+// }
+
+// console.log(makeInputVerifier(12, 54, 7))
+
+
+
+
+
 
 
 //HARD ALGO
@@ -43,7 +72,7 @@
 //     //stringify 
 //     return convertedDates
 // }
-//expected output for first date "10 20 2052"
+// // expected output for first date "10 20 2052"
 
 
 
